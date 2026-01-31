@@ -1,0 +1,605 @@
+/* RESET & BASIC SETUP */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-green: #6b9080; /* Muted dark green */
+  --light-green: #eaf4f4; /* Background light green */
+  --accent-green: #a4c3b2; /* Button/Active green */
+  --white: #ffffff;
+  --text-dark: #333333;
+  --text-grey: #666666;
+}
+body {
+  background-color: var(--light-green);
+  color: var(--text-dark);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* DETECTION FORM BUTTON-BASED STYLES */
+.detection-form {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.detection-form h2 {
+  text-align: center;
+  color: var(--primary-green);
+  margin-bottom: 30px;
+}
+
+.question-block {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: var(--light-green);
+  border-radius: 10px;
+}
+
+.question-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.label-left,
+.label-right {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 120px;
+  text-align: center;
+}
+
+.label-left {
+  text-align: right;
+}
+
+.label-right {
+  text-align: left;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Hide radio input */
+.button-group input[type="radio"] {
+  display: none;
+}
+
+/* Style for button labels */
+.btn-option {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-green);
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 0;
+}
+
+.btn-option:hover {
+  background-color: var(--accent-green);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Checked state */
+.button-group input[type="radio"]:checked + .btn-option {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border-color: var(--primary-green);
+  box-shadow: 0 0 10px rgba(107, 144, 128, 0.5);
+}
+
+.btn-submit {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px 30px;
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #557565;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(107, 144, 128, 0.4);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR STYLING [cite: 10-17] */
+.sidebar {
+  width: 260px;
+  background-color: var(--white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  height: 100%;
+}
+
+.logo h2 {
+  color: var(--primary-green);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: var(--text-grey);
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+  margin-left: 260px; /* Offset for sidebar */
+  flex-grow: 1;
+  padding: 30px 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* DASHBOARD CARDS [cite: 18-21] */
+.welcome-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.welcome-text {
+  max-width: 60%;
+}
+
+.welcome-text h2 {
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-green);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #557565;
+}
+
+.illustration-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  border: 2px dashed #ccc;
+}
+
+/* HISTORY TABLE SECTION */
+.history-preview {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.empty-state {
+  padding: 30px;
+  text-align: center;
+  color: var(--text-grey);
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* DETECTION FORM STYLING  */
+.question-card {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.question-item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.question-item label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.scale-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+}
+
+.scale-label {
+  font-size: 0.9rem;
+  color: var(--text-grey);
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-group label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.radio-group input {
+  margin-bottom: 5px;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-green);
+}
+
+/* =========================================
+   AUTH PAGES (Login & Register)
+   ========================================= */
+
+/* Specific body style for Login/Register pages */
+body.auth-body {
+  /* Make sure you have 'background.jpg' in your folder */
+  background: #f0f0f0;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #000; /* Override default text color */
+}
+
+/* Top Right Navigation Buttons */
+.top-nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  background-color: rgba(176, 218, 218, 0.9);
+  padding: 8px 25px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #92caca;
+}
+
+/* Glassmorphism Card (Shared for Login & Register) */
+.auth-card {
+  background-color: rgba(176, 218, 218, 0.85);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 4px;
+}
+
+.auth-card h1 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.auth-subtitle a {
+  color: #2e5e4e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Auth Form Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background-color: rgba(230, 245, 245, 0.8);
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Auth Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: rgba(230, 245, 245, 0.8);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 15px;
+  background-color: rgba(230, 245, 245, 0.8);
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   DASHBOARD DATA TABLES (For Riwayat)
+   ========================================= */
+.table-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* Handles small screens */
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 15px;
+  text-align: left;
+  border-radius: 4px; /* Optional rounded corners on header */
+}
+
+.data-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.data-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Color coding for results */
+.status-light {
+  background-color: #e6fffa;
+  color: #2c7a7b;
+} /* Cemas Ringan */
+.status-medium {
+  background-color: #fffaf0;
+  color: #dd6b20;
+} /* Cemas Sedang */
+.status-panic {
+  background-color: #fff5f5;
+  color: #c53030;
+} /* Panik */
+
+.btn-detail {
+  text-decoration: none;
+  color: var(--primary-green);
+  font-weight: 600;
+  border: 1px solid var(--primary-green);
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-detail:hover {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+/* =========================================
+   PROFILE FORM STYLES
+   ========================================= */
+.profile-card {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.large-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-green);
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-form .input-group {
+  margin-bottom: 20px;
+}
+
+.dashboard-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-grey);
+}
+
+.dashboard-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.dashboard-form input:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
