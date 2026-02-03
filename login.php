@@ -1,3 +1,24 @@
+<?php
+require_once 'config/database.php';
+require_once 'classes/functions.php';
+
+$functions = new Functions($koneksi);
+
+// If already logged in, redirect to appropriate page
+if (isset($_SESSION['id_user'])) {
+    if ($_SESSION['role'] == '1') {
+        header('Location: index.php');
+    } else {
+        header('Location: indexAdmin.php');
+    }
+    exit();
+}
+
+// Handle login
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $functions->login();
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,7 +39,7 @@
         
         <p class="auth-subtitle">Belum punya akun? <a href="register.php">Daftar</a></p>
 
-        <form action="index.php" method="POST" class="auth-form">
+        <form action="" method="POST" class="auth-form">
             <div class="input-group">
                 <input type="email" name="email" placeholder="Alamat Email" required>
             </div>
@@ -28,7 +49,6 @@
             </div>
 
             <button type="submit" class="auth-btn">Masuk</button>
-            
         </form>
     </div>
 

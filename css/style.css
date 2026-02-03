@@ -149,7 +149,7 @@ body {
   min-height: 100vh;
 }
 
-/* SIDEBAR STYLING [cite: 10-17] */
+/* SIDEBAR STYLING */
 .sidebar {
   width: 260px;
   background-color: var(--white);
@@ -224,7 +224,7 @@ header {
   font-weight: bold;
 }
 
-/* DASHBOARD CARDS [cite: 18-21] */
+/* DASHBOARD CARDS */
 .welcome-card {
   background-color: var(--white);
   padding: 30px;
@@ -356,7 +356,6 @@ header {
 
 /* Specific body style for Login/Register pages */
 body.auth-body {
-  /* Make sure you have 'background.jpg' in your folder */
   background: #f0f0f0;
   background-size: cover;
   height: 100vh;
@@ -364,7 +363,7 @@ body.auth-body {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: #000; /* Override default text color */
+  color: #000;
 }
 
 /* Top Right Navigation Buttons */
@@ -422,13 +421,15 @@ body.auth-body {
 }
 
 /* Auth Form Inputs */
+/* Auth Form Inputs */
 .auth-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.input-group input {
+/* Apply 100% width only to text-based inputs, not radio buttons */
+.input-group input:not([type="radio"]) {
   width: 100%;
   padding: 12px 15px;
   border: none;
@@ -436,11 +437,37 @@ body.auth-body {
   font-size: 1rem;
   color: #333;
   outline: none;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
 }
 
-.input-group input::placeholder {
-  color: #000;
+/* NEW: Style for the Radio Group Container */
+.radio-group {
+  text-align: left;
+  background-color: rgba(230, 245, 245, 0.5);
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.radio-group label {
+  font-size: 0.9rem;
   font-weight: 600;
+  color: #000;
+  cursor: pointer;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ensure radio buttons don't get the 100% width */
+.radio-item input[type="radio"] {
+  width: auto !important;
+  cursor: pointer;
+  accent-color: #2e5e4e; /* Changes the radio circle color to match your theme */
 }
 
 /* Auth Buttons */
@@ -484,7 +511,7 @@ body.auth-body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  overflow-x: auto; /* Handles small screens */
+  overflow-x: auto;
 }
 
 .data-table {
@@ -498,7 +525,7 @@ body.auth-body {
   color: var(--white);
   padding: 15px;
   text-align: left;
-  border-radius: 4px; /* Optional rounded corners on header */
+  border-radius: 4px;
 }
 
 .data-table td {
@@ -523,15 +550,15 @@ body.auth-body {
 .status-light {
   background-color: #e6fffa;
   color: #2c7a7b;
-} /* Cemas Ringan */
+}
 .status-medium {
   background-color: #fffaf0;
   color: #dd6b20;
-} /* Cemas Sedang */
+}
 .status-panic {
   background-color: #fff5f5;
   color: #c53030;
-} /* Panik */
+}
 
 .btn-detail {
   text-decoration: none;
@@ -602,4 +629,28 @@ body.auth-body {
 .dashboard-form input:focus {
   border-color: var(--primary-green);
   outline: none;
+}
+
+/* Article Card Styles */
+.article-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.article-card h3 {
+  color: var(--primary-green);
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.article-card ul {
+  margin: 12px 0 18px 20px;
+  color: var(--text-dark);
+}
+
+.article-card p {
+  margin-bottom: 15px;
+  line-height: 1.8;
 }
