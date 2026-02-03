@@ -1,3 +1,16 @@
+<?php
+require_once 'config/database.php';
+require_once 'classes/functions.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['id_user'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$functions = new Functions($koneksi);
+$user_data = $functions->getUserData($_SESSION['id_user']);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
