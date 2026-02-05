@@ -26,8 +26,8 @@ $history = $functions->getUserHistory($_SESSION['id_user']);
                         <th width="5%">No</th>
                         <th width="20%">Tanggal</th>
                         <th width="15%">Skor</th>
-                        <th width="40%">Hasil Konsultasi</th>
-                        <th width="20%">Aksi</th>
+                        <th width="35%">Hasil Konsultasi</th>
+                        <th width="25%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,9 +45,12 @@ $history = $functions->getUserHistory($_SESSION['id_user']);
                     <tr>
                         <td><?php echo $no++; ?></td>
                         <td><?php echo date('d F Y, H:i', strtotime($h['tanggal_konsultasi'])); ?></td>
-                        <td><strong><?php echo $h['total_score']; ?>/40</strong></td>
+                        <td><strong><?php echo $h['total_score']; ?>/80</strong></td>
                         <td><span class="status-badge <?php echo $badge_class; ?>"><?php echo htmlspecialchars($h['kategori_kecemasan']); ?></span></td>
-                        <td><a href="result.php?id=<?php echo $h['id_konsultasi']; ?>" class="btn-detail">Detail</a></td>
+                        <td>
+                            <a href="result.php?id=<?php echo $h['id_konsultasi']; ?>" class="btn-detail">Detail</a>
+                            <a href="print_result.php?id=<?php echo $h['id_konsultasi']; ?>" target="_blank" class="btn-detail" style="background-color: var(--accent-green); margin-left: 5px;">🖨️ Print</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
