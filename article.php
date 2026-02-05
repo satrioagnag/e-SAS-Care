@@ -1,27 +1,43 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/sidebar.php'; ?>
 
+<?php
+// Get all articles
+$articles = $functions->getAllArticles();
+?>
+
 <main class="main-content">
     <header style="margin-bottom: 30px;">
         <h1>Artikel Kecemasan</h1>
+        <p style="color: var(--text-grey); margin-top: 8px;">
+            Baca artikel-artikel informatif tentang kecemasan dan cara mengatasinya
+        </p>
     </header>
 
-    <div class="articles-list" style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="article-card" style="background-color: white; padding: 20px; border-radius: 15px;">
-            <h2>Memahami Kecemasan: Gejala dan Cara Mengatasinya</h2>
-            <p>Kecemasan adalah respons alami tubuh terhadap stres. Artikel ini membahas gejala umum kecemasan dan strategi efektif untuk mengelolanya.</p>
-            <a href="article_detail.php" class="btn-primary">BACA SELENGKAPNYA</a>
+    <?php if (count($articles) == 0): ?>
+        <div class="empty-state">
+            <p>Belum ada artikel tersedia</p>
         </div>
+    <?php else: ?>
+        <div class="articles-list" style="display: flex; flex-direction: column; gap: 20px;">
+            <?php foreach ($articles as $article): ?>
+            <div class="article-card" style="background-color: white; padding: 20px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <h2 style="color: var(--primary-green); margin-bottom: 10px;">
+                    <?php echo htmlspecialchars($article['judul']); ?>
+                </h2>
+                <div style="color: var(--text-grey); font-size: 0.9rem; margin-bottom: 15px;">
+                    <span>📝 <?php echo htmlspecialchars($article['penulis']); ?></span>
+                    <span style="margin-left: 15px;">📅 <?php echo date('d F Y', strtotime($article['tanggal_publikasi'])); ?></span>
+                    <span style="margin-left: 15px;">👁️ <?php echo number_format($article['views']); ?> views</span>
+                </div>
+                <p style="color: var(--text-dark); line-height: 1.6; margin-bottom: 15px;">
+                    <?php echo htmlspecialchars($article['ringkasan']); ?>
+                </p>
+                <a href="article_detail.php?id=<?php echo $article['id_artikel']; ?>" class="btn-primary">BACA SELENGKAPNYA</a>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</main>
 
-        <div class="article-card" style="background-color: white; padding: 20px; border-radius: 15px;">
-            <h2>Teknik Relaksasi untuk Mengurangi Kecemasan</h2>
-            <p>Pelajari berbagai teknik relaksasi seperti meditasi, pernapasan dalam, dan yoga yang dapat membantu meredakan kecemasan Anda.</p>
-            <a href="article_detail.php" class="btn-primary">BACA SELENGKAPNYA</a>
-        </div>
-
-        <div class="article-card" style="background-color: white; padding: 20px; border-radius: 15px;">
-            <h2>Pola Hidup Sehat untuk Menangkal Kecemasan</h2>
-            <p>Mengadopsi pola hidup sehat dapat berkontribusi besar dalam mengurangi kecemasan. Temukan tips tentang diet, olahraga, dan tidur yang baik.</p>
-            <a href="article_detail.php" class="btn-primary">BACA SELENGKAPNYA</a>
-        </div>
-    </div>
+<?php include 'includes/footer.php'; ?>
