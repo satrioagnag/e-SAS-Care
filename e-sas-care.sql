@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 05, 2026 at 09:02 AM
+-- Generation Time: Feb 08, 2026 at 08:44 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -86,7 +86,11 @@ CREATE TABLE `konsultasi` (
 --
 
 INSERT INTO `konsultasi` (`id_konsultasi`, `id_user`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`, `q11`, `q12`, `q13`, `q14`, `q15`, `q16`, `q17`, `q18`, `q19`, `q20`, `total_score`, `index_score`, `kategori_kecemasan`, `tanggal_konsultasi`) VALUES
-(1, 2, 4, 3, 4, 2, 4, 1, 4, 3, 4, 4, 3, 4, 4, 2, 3, 4, 3, 4, 4, 2, 66, 82.50, 'Kecemasan Berat', '2026-02-02 17:03:03');
+(1, 2, 4, 3, 4, 2, 4, 1, 4, 3, 4, 4, 3, 4, 4, 2, 3, 4, 3, 4, 4, 2, 66, 82.50, 'Kecemasan Berat', '2026-02-02 17:03:03'),
+(2, 3, 3, 3, 2, 3, 3, 3, 3, 2, 3, 3, 2, 3, 4, 2, 3, 3, 4, 3, 2, 4, 58, 72.50, 'Kecemasan Sedang', '2026-02-08 07:22:33'),
+(3, 3, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 24, 30.00, 'Normal (Tidak Ada Kecemasan Signifikan)', '2026-02-08 07:23:35'),
+(4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 40, 50.00, 'Kecemasan Ringan', '2026-02-08 07:24:39'),
+(5, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 80, 100.00, 'Kecemasan Berat', '2026-02-08 07:25:11');
 
 -- --------------------------------------------------------
 
@@ -107,31 +111,19 @@ CREATE TABLE `rekomendasi` (
 --
 
 INSERT INTO `rekomendasi` (`id_rekomendasi`, `kategori_kecemasan`, `rekomendasi`, `urutan`, `created_at`) VALUES
-(1, 'Normal', 'Pertahankan pola hidup sehat dengan olahraga teratur dan tidur yang cukup', 1, '2026-02-03 03:16:53'),
-(2, 'Normal', 'Lanjutkan aktivitas positif dan hobi yang Anda sukai', 2, '2026-02-03 03:16:53'),
-(3, 'Normal', 'Tetap jaga keseimbangan antara pekerjaan dan istirahat', 3, '2026-02-03 03:16:53'),
-(4, 'Normal', 'Lakukan pemeriksaan kesehatan mental rutin sebagai tindakan preventif', 4, '2026-02-03 03:16:53'),
-(5, 'Ringan', 'Praktikkan teknik pernapasan dalam selama 5-10 menit setiap hari', 1, '2026-02-03 03:16:53'),
-(6, 'Ringan', 'Lakukan olahraga ringan seperti jalan kaki atau yoga minimal 30 menit per hari', 2, '2026-02-03 03:16:53'),
-(7, 'Ringan', 'Batasi konsumsi kafein dan nikotin', 3, '2026-02-03 03:16:53'),
-(8, 'Ringan', 'Coba teknik mindfulness atau meditasi', 4, '2026-02-03 03:16:53'),
-(9, 'Ringan', 'Berbagi perasaan dengan orang terdekat yang Anda percaya', 5, '2026-02-03 03:16:53'),
-(10, 'Ringan', 'Jaga pola tidur yang konsisten (7-8 jam per malam)', 6, '2026-02-03 03:16:53'),
-(11, 'Sedang', 'Konsultasikan dengan psikolog untuk mendapatkan terapi kognitif perilaku (CBT)', 1, '2026-02-03 03:16:53'),
-(12, 'Sedang', 'Atur jadwal harian yang terstruktur untuk mengurangi ketidakpastian', 2, '2026-02-03 03:16:53'),
-(13, 'Sedang', 'Praktikkan teknik relaksasi progresif secara rutin', 3, '2026-02-03 03:16:53'),
-(14, 'Sedang', 'Hindari alkohol dan zat yang dapat memperburuk kecemasan', 4, '2026-02-03 03:16:53'),
-(15, 'Sedang', 'Pertimbangkan untuk bergabung dengan kelompok dukungan', 5, '2026-02-03 03:16:53'),
-(16, 'Sedang', 'Jaga pola tidur yang konsisten dan hindari begadang', 6, '2026-02-03 03:16:53'),
-(17, 'Sedang', 'Catat pemicu kecemasan Anda untuk mengidentifikasi pola', 7, '2026-02-03 03:16:53'),
-(18, 'Berat', 'SEGERA konsultasikan dengan psikiater atau profesional kesehatan mental', 1, '2026-02-03 03:16:53'),
-(19, 'Berat', 'Pertimbangkan terapi kombinasi (psikoterapi dan farmakologi jika diperlukan)', 2, '2026-02-03 03:16:53'),
-(20, 'Berat', 'Jangan ragu untuk meminta bantuan dari hotline krisis mental: 119 ext 8', 3, '2026-02-03 03:16:53'),
-(21, 'Berat', 'Informasikan kondisi Anda kepada keluarga terdekat untuk mendapat dukungan', 4, '2026-02-03 03:16:53'),
-(22, 'Berat', 'Hindari isolasi sosial, tetap terhubung dengan support system', 5, '2026-02-03 03:16:53'),
-(23, 'Berat', 'Ikuti rencana perawatan yang diberikan oleh profesional secara konsisten', 6, '2026-02-03 03:16:53'),
-(24, 'Berat', 'Pertimbangkan rawat jalan atau rawat inap jika kondisi sangat mengganggu', 7, '2026-02-03 03:16:53'),
-(25, 'Berat', 'Hotline Kesehatan Mental 24/7: 119 ext 8 atau 500-454 (Halo Kemenkes RI)', 8, '2026-02-03 03:16:53');
+(1, 'Normal', 'Teknik Relaksasi Pernapasan Dalam (Deep Breathing) : \r\nTeknik ini merupakan salah satu teknik sederhana yang efektif untuk membantu meredakan kecemasan. Pola napas yang dilakukan secara perlahan dan teratur dapat memicu respon relaksasi tubuh, sehingga ketegangan otot berkurang, denyut jantung menjadi lebih stabil, dan individuu merasa lebih tenang saat menghadapi situasi yang menegangkan.\r\nTeknik ini dapat dilakukan dengan posisi yang nyaman lalu tarik nafas secara perlahan melalui hidung kemudian hembuskan melalui mulut. Dan ulangi selama 5-10 menit saat merasa cemas.\r\n', 1, '2026-02-03 03:16:53'),
+(2, 'Normal', 'Relaksasi ASMR (Autonomous Sensory Meridian Response) : \r\nRelaksasi ASMR memanfaatkan rangsangan suara atau visual tertentu yang memberikan sensasi nyaman dan menenangkan. Teknik ini dapat membantu menurunkan kecemasan dengan menciptakan suasan rileks dan mengurangi ketegangan mental, terutama pada mahasiswa yang mudah merasa tertekan. Teknik ini bisa dilakukan dengan mendengarkan suara hujan, suara alam saat pengguna sedang merasa gelisah atau sulit tidur.\r\n', 2, '2026-02-03 03:16:53'),
+(3, 'Normal', 'Psychoeducation (Edukasi Kesehatan Mental) : \r\nPsychoeducation merupakan upaya pemberian informasi terkait kecemasab, mulai dari gejala hingga cara penanganannya. Dengan pemahaman yang baik, individu diharapkan mampu mengenali kondisi kecemasannya sejak dini dan melakukan langkah-langkah pencegahan agar kecemasan tidak berkembang menjadi masalah yang lebih serius.', 3, '2026-02-03 03:16:53'),
+(5, 'Ringan', 'Terapi Relaksasi Progresif : \r\nRelaksasi progresif ini dilakukan dengan cara menegangkan lalu melemaskan otot-otot tubuh secara bertahap. Teknik ini membantu individu menyadari perbedaan antara kondisi tubuh yang tegang dan rileks, sehingga mampu mengurangi keluhan fisik maupun psikologis yang muncul akibat kecemasan. Teknik ini juga dapat dilakukan sambil berbaring atau duduk.\r\n', 1, '2026-02-03 03:16:53'),
+(6, 'Ringan', 'Terapi Relaksasi Benson : \r\nTerapi Benson menggabungkan teknik relaksasi dengan unsur sugesti positif atau keyakinan individu. Pendekatan ini bertujuan untuk menenangkan pikiran, menurunkan tingkat stres, serta membantu individu mengendalikan respon emosional yang muncul akibat kecemasan. Terapi ini dapat dilakukan saat berbaring atau duduk dengan nyaman, pejamkan mata lalu atur napas secara perlahan. Lalu saat menghembuskan napas ulangi kalimat positif secara perlahan didalam hati.', 2, '2026-02-03 03:16:53'),
+(7, 'Ringan', 'Terapi Suportif : \r\nTerapi Suportif befokus pada pemberian dukungan emosional melalui empati, komunikasi yang baik, dan sikap saling memahami. Dengan adanya dukungan tersebut, individu merasa lebih diterima dan tidak sendirian dalam menghadapi masalah, sehingga tingkat kecemasan dapat berkurang secara bertahap, khususnya pada tekanan akademik dan sosial.\r\nTeknik ini dapat pengguna lakukan dengan cera menceritakan perasaan cemas kepada teman dekat, keluarga atau orang yang anda percaya. Pengguna juga dapat mengikuti sesi konseling untuk mendapatkan dukungan, motivasi dan arahan.\r\n', 3, '2026-02-03 03:16:53'),
+(8, 'Ringan', 'Self-Healing Therapy : \r\nSelf-Healing Therapy menekankan pada proses mengenali dan menerima emosi yang dirasakan, serta mengelola pikiran negatif secara mandiri. Pendekatan ini membantu individu memahami sumber kecemasan yang dialami dan membangun strategi koping yang lebih sehat dalam kehidupan sehari-hari. Pengguna dapat melakukan afirmasi positif kepada diri sendiri setiap hari, menuliskan perasaan dan pikiran dalam jurnal harian, melakukan aktivitas yang disukai, melungkan waktu untuk diri sendiri.', 4, '2026-02-03 03:16:53'),
+(11, 'Sedang', 'Terapi Suportif (Intensif) : \r\nTerapi Suportif befokus pada pemberian dukungan emosional melalui empati, komunikasi yang baik, dan sikap saling memahami. Dengan adanya dukungan tersebut, individu merasa lebih diterima dan tidak sendirian dalam menghadapi masalah, sehingga tingkat kecemasan dapat berkurang secara bertahap, khususnya pada tekanan akademik dan sosial.\r\nTeknik ini dapat pengguna lakukan dengan cera menceritakan perasaan cemas kepada teman dekat, keluarga atau orang yang anda percaya. Pengguna juga dapat mengikuti sesi konseling untuk mendapatkan dukungan, motivasi dan arahan.\r\n', 1, '2026-02-03 03:16:53'),
+(12, 'Sedang', 'Terapi Relaksasi Benson : \r\nTerapi Benson menggabungkan teknik relaksasi dengan unsur sugesti positif atau keyakinan individu. Pendekatan ini bertujuan untuk menenangkan pikiran, menurunkan tingkat stres, serta membantu individu mengendalikan respon emosional yang muncul akibat kecemasan. Terapi ini dapat dilakukan saat berbaring atau duduk dengan nyaman, pejamkan mata lalu atur napas secara perlahan. Lalu saat menghembuskan napas ulangi kalimat positif secara perlahan didalam hati.', 2, '2026-02-03 03:16:53'),
+(13, 'Sedang', 'Self-Healing Therapy : \r\nSelf-Healing Therapy menekankan pada proses mengenali dan menerima emosi yang dirasakan, serta mengelola pikiran negatif secara mandiri. Pendekatan ini membantu individu memahami sumber kecemasan yang dialami dan membangun strategi koping yang lebih sehat dalam kehidupan sehari-hari. Pengguna dapat melakukan afirmasi positif kepada diri sendiri setiap hari, menuliskan perasaan dan pikiran dalam jurnal harian, melakukan aktivitas yang disukai, melungkan waktu untuk diri sendiri.', 3, '2026-02-03 03:16:53'),
+(18, 'Berat', 'Teknik Relaksasi Pernapasan Dalam (Deep Breathing) : \r\nTeknik ini merupakan salah satu teknik sederhana yang efektif untuk membantu meredakan kecemasan. Pola napas yang dilakukan secara perlahan dan teratur dapat memicu respon relaksasi tubuh, sehingga ketegangan otot berkurang, denyut jantung menjadi lebih stabil, dan individuu merasa lebih tenang saat menghadapi situasi yang menegangkan.\r\nTeknik ini dapat dilakukan dengan posisi yang nyaman lalu tarik nafas secara perlahan melalui hidung kemudian hembuskan melalui mulut. Dan ulangi selama 5-10 menit saat merasa cemas.', 1, '2026-02-03 03:16:53'),
+(19, 'Berat', 'Terapi Suportif (Krisis) : \r\nTerapi Suportif befokus pada pemberian dukungan emosional melalui empati, komunikasi yang baik, dan sikap saling memahami. Dengan adanya dukungan tersebut, individu merasa lebih diterima dan tidak sendirian dalam menghadapi masalah, sehingga tingkat kecemasan dapat berkurang secara bertahap, khususnya pada tekanan akademik dan sosial.\r\nTeknik ini dapat pengguna lakukan dengan cera menceritakan perasaan cemas kepada teman dekat, keluarga atau orang yang anda percaya. Pengguna juga dapat mengikuti sesi konseling untuk mendapatkan dukungan, motivasi dan arahan.', 2, '2026-02-03 03:16:53'),
+(20, 'Berat', 'Psychoeducation (Edukasi Kesehatan Mental) : \r\nPsychoeducation merupakan upaya pemberian informasi terkait kecemasab, mulai dari gejala hingga cara penanganannya. Dengan pemahaman yang baik, individu diharapkan mampu mengenali kondisi kecemasannya sejak dini dan melakukan langkah-langkah pencegahan agar kecemasan tidak berkembang menjadi masalah yang lebih serius.\r\n', 3, '2026-02-03 03:16:53');
 
 -- --------------------------------------------------------
 
@@ -156,8 +148,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `role`, `nama`, `email`, `jenis_kelamin`, `tgl_lahir`, `password`, `created_at`, `updated_at`) VALUES
-(2, '0', 'Jean', 'jean@test.com', '0', '2002-08-10', '$2y$10$kbV/KfF8vHBiMv0T8OWO/e1Kp4j85k3xXy2/W5kMpc2vipMwr5hfy', '2026-02-02 16:22:36', '2026-02-02 16:41:59'),
-(3, '1', 'Administrator', 'admin@prod.com', '1', '2000-07-10', '$2y$10$W5OdEPulj8wD3Jtsm7XOdO1OptDYCdZ1kkJi25NWO8eJ5vQEI6wd2', '2026-02-03 02:16:40', '2026-02-03 02:17:27');
+(2, '0', 'Jean', 'jean@esascare.com', '0', '2002-08-10', '$2y$10$kbV/KfF8vHBiMv0T8OWO/e1Kp4j85k3xXy2/W5kMpc2vipMwr5hfy', '2026-02-02 16:22:36', '2026-02-05 09:21:07'),
+(3, '1', 'Administrator', 'admin@esascare.com', '1', '2000-07-10', '$2y$10$W5OdEPulj8wD3Jtsm7XOdO1OptDYCdZ1kkJi25NWO8eJ5vQEI6wd2', '2026-02-03 02:16:40', '2026-02-05 09:21:17');
 
 --
 -- Indexes for dumped tables

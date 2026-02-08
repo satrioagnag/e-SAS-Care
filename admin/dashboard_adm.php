@@ -82,7 +82,7 @@ $recent_consultations = mysqli_query($koneksi, "
                     <a href="articles_adm.php" class="btn-primary" style="text-align: center; padding: 15px;">
                         📝 Kelola Artikel
                     </a>
-                    <a href="recommendations_adm.php" class="btn-primary" style="text-align: center; padding: 15px; background-color: var(--accent-green);">
+                    <a href="reccs_adm.php" class="btn-primary" style="text-align: center; padding: 15px; background-color: var(--accent-green);">
                         💡 Kelola Rekomendasi
                     </a>
                     <a href="users_adm.php" class="btn-primary" style="text-align: center; padding: 15px; background-color: #f5576c;">

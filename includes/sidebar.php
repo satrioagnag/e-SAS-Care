@@ -6,6 +6,7 @@ if (isset($_GET['logout'])) {
 ?>
 <aside class="sidebar">
     <div class="logo">
+        <img src="resources/logo.png" alt="e-SAS Care logo" />
         <h2>e-SAS Care</h2>
     </div>
     

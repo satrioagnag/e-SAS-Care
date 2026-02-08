@@ -13,7 +13,7 @@ $functions = new Functions($koneksi);
 if (isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
     mysqli_query($koneksi, "DELETE FROM rekomendasi WHERE id_rekomendasi = $id");
-    echo "<script>alert('Rekomendasi berhasil dihapus!'); window.location='recommendations_adm.php?category=" . ($_GET['cat'] ?? 'Normal') . "';</script>";
+    echo "<script>alert('Rekomendasi berhasil dihapus!'); window.location='reccs_adm.php?category=" . ($_GET['cat'] ?? 'Normal') . "';</script>";
 }
 
 // Handle Reorder
@@ -42,7 +42,7 @@ if (isset($_GET['reorder']) && isset($_GET['direction'])) {
         }
     }
     
-    header("Location: recommendations_adm.php?category=$category");
+    header("Location: reccs_adm.php?category=$category");
     exit();
 }
 
@@ -54,14 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($id > 0) {
         mysqli_query($koneksi, "UPDATE rekomendasi SET rekomendasi = '$recommendation' WHERE id_rekomendasi = $id");
-        echo "<script>alert('Rekomendasi berhasil diupdate!'); window.location='recommendations_adm.php?category=$category';</script>";
+        echo "<script>alert('Rekomendasi berhasil diupdate!'); window.location='reccs_adm.php?category=$category';</script>";
     } else {
         // Get max order
         $max_order = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT MAX(urutan) as max FROM rekomendasi WHERE kategori_kecemasan = '$category'"))['max'] ?? 0;
         $next_order = $max_order + 1;
         
         mysqli_query($koneksi, "INSERT INTO rekomendasi (kategori_kecemasan, rekomendasi, urutan) VALUES ('$category', '$recommendation', $next_order)");
-        echo "<script>alert('Rekomendasi berhasil ditambahkan!'); window.location='recommendations_adm.php?category=$category';</script>";
+        echo "<script>alert('Rekomendasi berhasil ditambahkan!'); window.location='reccs_adm.php?category=$category';</script>";
     }
 }
 
@@ -157,7 +157,7 @@ $recommendations = mysqli_query($koneksi, "SELECT * FROM rekomendasi WHERE kateg
                             <?php echo $edit_recommendation ? '💾 Update Rekomendasi' : '➕ Tambah Rekomendasi'; ?>
                         </button>
                         <?php if ($edit_recommendation): ?>
-                        <a href="recommendations_adm.php?category=<?php echo $filter_category; ?>" class="btn-primary" style="background-color: var(--text-grey);">❌ Batal</a>
+                        <a href="reccs_adm.php?category=<?php echo $filter_category; ?>" class="btn-primary" style="background-color: var(--text-grey);">❌ Batal</a>
                         <?php endif; ?>
                     </div>
                 </form>

@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="auth-body"> 
+    
     <nav class="top-nav">
         <a href="login.php" class="nav-btn">Masuk</a>
         <a href="register.php" class="nav-btn">Daftar</a>
@@ -51,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" class="auth-btn">Masuk</button>
         </form>
     </div>
+
+    <picture class="auth-bg">
+        <img src="resources/background-auth.jpg" alt="Background Image">
 
 </body>
 </html>

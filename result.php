@@ -49,6 +49,7 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
     <title>Hasil Tes Kecemasan - <?php echo htmlspecialchars($user_data['nama']); ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -225,12 +226,35 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
             background-color: #557565;
         }
         
+        .back-button{
+            position: fixed;
+            top: 75px;
+            right: 20px;
+            background-color: #6b9080;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            background-color: #557565;
+        }
+        
         @media print {
             body {
                 padding: 20px;
             }
             
             .print-button {
+                display: none;
+            }
+
+            .back-button {
                 display: none;
             }
             
@@ -242,11 +266,14 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
 </head>
 <body>
     <button onclick="window.print()" class="print-button">🖨️ Print / Save as PDF</button>
-    
+    <button onclick="window.location.href='index.php'" class="back-button">🏠 Dashboard</button>
     <div class="header">
+        <img style="width:120px " src="/resources/logo.png" alt="e-SAS Care logo" />
         <h1>HASIL TES KECEMASAN</h1>
-        <p class="subtitle">Zung Self-Rating Anxiety Scale (SAS)</p>
         <p class="subtitle">e-SAS Care - Sistem Deteksi Kecemasan Mandiri</p>
+        <p class="subtitle" style="font-style: italic">Electronic Self-Rating Anxiety Scale</p>
+        <p class="subtitle">With Zung Self-Rating Anxiety Scale (SAS)</p>
+        
     </div>
     
     <div class="patient-info">
@@ -258,6 +285,18 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
             <tr>
                 <td>Email</td>
                 <td>: <?php echo htmlspecialchars($user_data['email']); ?></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>: <?php echo $user_data['jenis_kelamin'] == '1' ? 'Laki-laki' : 'Perempuan'; ?></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td>: <?php echo date('d F Y', strtotime($user_data['tgl_lahir'])); ?></td>
+            </tr>
+            <tr>
+                <td>Usia</td>
+                <td>: <?php echo date_diff(date_create($user_data['tgl_lahir']), date_create('now'))->y; ?> tahun</td>
             </tr>
             <tr>
                 <td>Tanggal Tes</td>
@@ -378,5 +417,7 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
             Tidak disarankan untuk disebarluaskan tanpa izin.
         </p>
     </div>
+
 </body>
+
 </html>

@@ -12,7 +12,8 @@ if (isset($_GET['logout'])) {
 ?>
 <aside class="sidebar">
     <div class="logo">
-        <h2 style="color: #667eea;">🔧 Admin Panel</h2>
+        <img src="/resources/logo.png" alt="e-SAS Care logo" />
+        <h2 style="color: #6b9080;">🔧 Admin Panel</h2>
     </div>
     
     <nav class="menu">
