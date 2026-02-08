@@ -74,6 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <button type="submit" class="auth-btn">Daftar</button>
         </form>
+
+        <picture class="auth-bg">
+            <img src="resources/background-auth.jpg" alt="Background Image">
+
     </div>
 
 </body>

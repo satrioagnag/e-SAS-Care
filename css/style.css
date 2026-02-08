@@ -167,6 +167,15 @@ body {
   text-align: center;
 }
 
+/* Logo image placeholder styling */
+.logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+}
+
 .menu {
   flex-grow: 1;
 }
@@ -419,8 +428,16 @@ body.auth-body {
   text-decoration: none;
   font-weight: 600;
 }
+.auth-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
 
-/* Auth Form Inputs */
 /* Auth Form Inputs */
 .auth-form {
   display: flex;

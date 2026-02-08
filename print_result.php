@@ -244,9 +244,12 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
     <button onclick="window.print()" class="print-button">🖨️ Print / Save as PDF</button>
     
     <div class="header">
+        <img style="width:120px " src="/resources/logo.png" alt="e-SAS Care logo" />
         <h1>HASIL TES KECEMASAN</h1>
-        <p class="subtitle">Zung Self-Rating Anxiety Scale (SAS)</p>
         <p class="subtitle">e-SAS Care - Sistem Deteksi Kecemasan Mandiri</p>
+        <p class="subtitle" style="font-style: italic">Electronic Self-Rating Anxiety Scale</p>
+        <p class="subtitle">With Zung Self-Rating Anxiety Scale (SAS)</p>
+        
     </div>
     
     <div class="patient-info">
@@ -258,6 +261,18 @@ if (strpos($result['kategori_kecemasan'], 'Ringan') !== false) {
             <tr>
                 <td>Email</td>
                 <td>: <?php echo htmlspecialchars($user_data['email']); ?></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>: <?php echo $user_data['jenis_kelamin'] == '1' ? 'Laki-laki' : 'Perempuan'; ?></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td>: <?php echo date('d F Y', strtotime($user_data['tgl_lahir'])); ?></td>
+            </tr>
+            <tr>
+                <td>Usia</td>
+                <td>: <?php echo date_diff(date_create($user_data['tgl_lahir']), date_create('now'))->y; ?> tahun</td>
             </tr>
             <tr>
                 <td>Tanggal Tes</td>

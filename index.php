@@ -29,11 +29,6 @@ $latest_consultation = $history_count > 0 ? $history[0] : null;
             <p>Aplikasi ini hadir untuk bantu kamu mengenali kondisi tersebut secara perlahan dan mandiri.</p>
             <a href="detection.php" class="btn-primary">MULAI DETEKSI</a>
         </div>
-        <div class="welcome-image">
-            <div style="width: 150px; height: 150px; background-color: #f0f0f0; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #aaa; border: 2px dashed #ccc;">
-                [ Ilustrasi ]
-            </div>
-        </div>
     </div>
 
     <div class="history-preview" style="background-color: white; padding: 20px; border-radius: 15px;">
